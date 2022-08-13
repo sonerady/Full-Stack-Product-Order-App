@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./featured.module.scss";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import Image from "next/image";
@@ -20,7 +20,12 @@ const Featured = () => {
     }
   };
 
-  console.log("index", index);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleArrow("r");
+    }, 3000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className={styles.container}>
@@ -31,7 +36,10 @@ const Featured = () => {
       >
         <IoIosArrowDropleft />
       </div>
-      <div className={styles.wrapper}>
+      <div
+        className={styles.wrapper}
+        style={{ transform: `translateX(${-100 * index}vw)` }}
+      >
         {images.map((img, i) => (
           <div className={styles.imgContainer} key={i}>
             <Image src={img} alt="" layout="fill" objectFit="cover" />

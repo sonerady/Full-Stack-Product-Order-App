@@ -1,10 +1,13 @@
 @use "../../styles/variables/styles/index.scss" as *;
 
 .container {
-  background-color: $main-color;
+  background-color: rgba(234, 0, 255, 0.144);
+  backdrop-filter: blur(10px);
   height: $navbar-height;
   padding: 0px 50px;
-  position: sticky;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
   @include flex(center, space-between);
   .call {
     gap: 1rem;
