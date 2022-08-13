@@ -25,7 +25,7 @@ const Navbar = () => {
               </li>
             );
           })}
-          <h3>SONER ADY.</h3>
+          <h3>Fruit Basket</h3>
           {MenuItemRight.map((item, index) => {
             return (
               <li className={styles.listItem} key={index}>

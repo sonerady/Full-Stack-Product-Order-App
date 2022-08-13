@@ -1,0 +1,38 @@
+@use "../../styles/variables/styles/index.scss" as *;
+
+.container {
+  height: calc(100vh - 100px);
+  background-color: $main-color;
+  overflow: hidden;
+  position: relative;
+  @include mobile {
+    height: 50vh;
+  }
+  @include tablet {
+    height: 50vh;
+  }
+  .wrapper {
+    width: 300vw;
+    height: 100%;
+    display: flex;
+    transition: all 1.5s ease-in-out;
+    .imgContainer {
+      width: 100vw;
+      height: 100%;
+      position: relative;
+    }
+  }
+  .arrowContainer {
+    font-size: 5rem;
+    @include flex(center, center);
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+    color: $light;
+  }
+}

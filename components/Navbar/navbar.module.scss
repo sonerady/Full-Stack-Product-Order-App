@@ -4,6 +4,7 @@
   background-color: $main-color;
   height: $navbar-height;
   padding: 0px 50px;
+  position: sticky;
   @include flex(center, space-between);
   .call {
     gap: 1rem;
@@ -21,18 +22,24 @@
       background-color: $light;
     }
     .cartIcon {
+      color: $light;
       font-size: 30px;
+      cursor: pointer;
     }
     .list {
-      @include flex(center, space-between);
+      @include flex(center, space-around);
       width: 100%;
       color: $light;
-      gap: 1rem;
       .listItem {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      h3 {
+        font-size: 2rem;
       }
     }
     .texts {
+      cursor: pointer;
       color: $light;
       .text:first-child,
       :last-child {
