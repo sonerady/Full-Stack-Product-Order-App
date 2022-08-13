@@ -15,7 +15,7 @@ const ProductList = () => {
       </p>
       <div className={styles.wrapper}>
         {ProductsData.map((item, i) => {
-          return <ProductCard item={item} index={i} />;
+          return <ProductCard item={item} key={i} />;
         })}
       </div>
     </div>

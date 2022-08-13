@@ -1,0 +1,33 @@
+@use "../../styles/variables/styles/index.scss" as *;
+
+.container {
+  height: calc(50vh - $navbar-height);
+  background-color: $main-color;
+  @include flex(center, center);
+  .item {
+    width: 80%;
+    @include flex(flex-start, space-between);
+    gap: 3rem;
+    .card:last-child {
+      @include flex(flex-end, unset);
+    }
+    .card:nth-child(2) {
+      @include flex(center, center);
+    }
+    .card {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      h1,
+      h2 {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $light;
+      }
+      p {
+        color: $light;
+        opacity: 0.8;
+      }
+    }
+  }
+}
